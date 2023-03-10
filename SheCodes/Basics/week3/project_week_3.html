@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/070/060/original/181059.png?1677976930"
+    />
+    <title>Ice-Skating</title>
+    <style>
+      div {
+        border: 1px solid;
+        margin: 30px 20%;
+        background: linear-gradient(#05570b, #577e4f, #bad6b4);
+        border-radius: 15px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h2 {
+        text-align: center;
+        border: 1px solid;
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 5px;
+        margin: 20px 20px;
+        font-size: 25px;
+        color: white;
+      }
+      img {
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        border-radius: 5px;
+      }
+      hr {
+        margin: 20px 20px;
+        overflow: hidden;
+        border-width: 1.5px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 15px;
+        color: #05570b;
+        font-weight: 900;
+        transition: all 150ms ease-in-out;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: white;
+      }
+      button {
+        display: block;
+        margin: 10px auto;
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 10px;
+        background: #05570b;
+        color: white;
+        border-color: #05570b;
+        transition: all 200ms ease-in-out;
+        box-shadow: 5px 5px 5px rgba(237, 241, 236, 0.5);
+      }
+      button:hover {
+        background: #577e4f;
+        color: #05570b;
+        box-shadow: 5px 5px 5px rgba(39, 61, 33, 0.5);
+      }
+      footer {
+        text-align: right;
+        font-size: 13px;
+        margin-right: 6px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .paragraph {
+        text-align: justify;
+        margin: auto 12px;
+        line-height: 30px;
+        color: white;
+        font-size: 18px;
+      }
+      .learn-more {
+        font-size: 13px;
+        margin: 7px 12px;
+        padding: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Go Ice-skating!</h1>
+      <h2>Great Family Fun</h2>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/070/056/original/GO_IceSkating.jpg?1677975476"
+        alt="Skating Family"
+      />
+      <hr />
+      <p class="paragraph">
+        Ice skating in Central Park is a perfect day or nighttime activity to do
+        with friends, family or even a date. So grab your skates (or rent some)
+        and enjoy! There are two main ice-skating rinks in Central Park, each
+        with skate & locker rentals available - <em>Wollman Rink</em> and
+        <em>Lasker Rink</em> (closed for renovations until 2024). A third (free)
+        option is also available at Conservatory Water when proper ice
+        conditions permit.
+      </p>
+      <p class="learn-more">
+        <strong>Learn more</strong> on our website
+        <a
+          href="https://www.centralpark.com/things-to-do/sports/ice-skating/"
+          target="_blank"
+          class="central-park"
+          >centralpark.com</a
+        >
+      </p>
+      <button>Book your ticket now!</button>
+      <footer>
+        This page was built by <br />
+        Iryna Netrebska
+      </footer>
+    </div>
+    <script>
+      function bookTicket() {
+        let firstName = prompt("What is your first name?");
+        let age = prompt("How old are you?");
+        let h1 = document.querySelector("h1");
+        if (age > 12 && age < 65) {
+          alert(
+            `Hi ${firstName}👋 Your ticket price is: $15 off peak, $25 peak, $35 holidays.`
+          );
+          h1.innerHTML = "Check our opening hours on our website 😊";
+        } else if (age >= 2) {
+          alert(`Hi ${firstName}👋 Your ticket price is: $10 anytime.`);
+          h1.innerHTML = "Check our opening hours on our website 😊";
+        } else if (age >= 0) {
+          alert(
+            `Sorry, ${firstName}, kids under 2 are not allowed on the rink.`
+          );
+          h1.innerHTML = "Happy to have you when you're older 😊";
+        } else {
+          alert("Enter a valid age number.");
+        }
+      }
+      let bookButton = document.querySelector("button");
+      bookButton.addEventListener("click", bookTicket);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+        text-align: center;
+        font-size: x-large;
+    }
+    h1 {
+        text-align: center;
+        margin: 5px auto;
+        padding: 5px;
+        color: #1A64D6;
+    }
+    h2 {
+        text-align: center;
+        margin: 0px 0px 10px 0px;
+        font-size: xx-large;
+    }
+    .degreenighttoday {
+        font-weight: lighter;
+    }
+    .day {
+        text-align: center;
+        padding: 20px 100px;
+        font-size: large;
+        font-weight: bold;
+        margin: 0 auto;
+        transition: all 200ms ease-in-out;
+        max-width: 300px;
+    }
+    .day:hover {
+        background-color: #FFFBEF;
+        border-radius: 10px;
+    }
+    .degree {
+        padding: 10px;
+        font-weight: 100;
+        font-size: large;
+        letter-spacing: 2px;
+    }
+    .degreeday {
+        font-weight: bold;
+    }
+    button {
+        color: white;
+        background-color: #1A64D6;
+        border-color: #1A64D6;
+        display: block;
+        padding: 17px 25px;
+        margin: 20px auto;
+        border-radius: 30px;
+        transition: all 200ms ease-in-out;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 2px 2px 2px lightblue;
+    }
+    button:hover {
+        color: #1A64D6;
+        background-color: #FFFBEF;
+        cursor: pointer;
+        background: transparent;
+        border-color: #1A64D6;
+    }
+    footer {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+  </style>
+  <body>
+    <header>&#x26C5</header>
+    <h1>Currently 1&#176 in Bordeaux</h1>
+    <h2><span class="degreenighttoday">0&#176</span> / 10&#176</h2>
+    <div class="day">🌧️ Tomorrow
+        <div class="degree">1&#176 / <span class="degreeday">10&#176</span></div>
+    </div>
+    <div class="day">🌩️ Friday
+        <div class="degree">-2&#176 / <span class="degreeday">8&#176</span></div>
+    </div>
+    <div class="day">☀️ Saturday
+        <div class="degree">3&#176 / <span class="degreeday">12&#176</span></div>
+    </div>
+    <button>Change City</button>
+    <footer>Coded by Iryna Netrebska</footer>
+    <script>
+       
+        function updateEmoji (newEmoji) {
+            let header = document.querySelector("header");
+            header.innerHTML = newEmoji;
+        }
+
+        function enterCity () {
+            let city = prompt("What city do you live in?");
+            let h1 = document.querySelector("h1");
+            let temperature = prompt("Enter the current temperature in your city.");
+            if (temperature < 5) {
+                updateEmoji("🥶");
+            } else if (temperature >= 5 && temperature < 20) {
+                updateEmoji("🙂");
+            } else if (temperature >= 20 && temperature < 32) {
+                updateEmoji("😄");
+            } else {
+                updateEmoji("🥵");
+            }
+            h1.innerHTML = `Currently ${temperature}&#176 in ${city}`;
+        }
+        let changeCity = document.querySelector("button");
+        changeCity.addEventListener("click", enterCity); 
+    </script>
+  </body>
+</html>
