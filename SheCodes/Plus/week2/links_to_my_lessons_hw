@@ -17,5 +17,10 @@ fontawesome.com
 CSS Positioning
 https://codesandbox.io/s/css-positioning-forked-se0i1n?file=/src/styles.css
 
+to creat a list : ul>li.class\*10 => this will creat a list with 10 lines
 
-to creat a list : ul>li.class*10 => this will creat a list with 10 lines
+Bootstrap challenge
+https://codesandbox.io/s/bootstrap-forked-jyu0ws?file=/index.html
+
+HTML Forms
+https://codesandbox.io/s/html-forms-forked-1gni7y?file=/index.html
