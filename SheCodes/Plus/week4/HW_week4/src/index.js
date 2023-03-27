@@ -27,7 +27,7 @@ function displayCity() {
   let cityOutput = document.querySelector("#city-display");
   city = city.value.trim();
   if (city) {
-    cityOutput.innerHTML = `${city}`;
+    cityOutput.innerHTML = city;
   }
 }
 
@@ -46,7 +46,7 @@ current.addEventListener("click", returnCity);
 function switchTemp(event) {
   event.preventDefault();
   let CelTemp = document.querySelector("#temp-display");
-  CelTemp.innerHTML = Math.round((21 * 9) / 5 + 32);
+  CelTemp.innerHTML = Math.round((21 * 9) / 5 + 32) + "°F";
 }
 
 let fahrenheitTemp = document.querySelector("#fahrenheit");
@@ -55,7 +55,7 @@ fahrenheitTemp.addEventListener("click", switchTemp);
 function switchTempBack(event) {
   event.preventDefault();
   let CelTemp = document.querySelector("#temp-display");
-  CelTemp.innerHTML = Math.round(((70 - 32) * 5) / 9);
+  CelTemp.innerHTML = Math.round(((70 - 32) * 5) / 9) + "°C";
 }
 
 let celciusTemp = document.querySelector("#celcius");
