@@ -27,6 +27,7 @@ let weather = {
 let city = prompt("What's your city/town?");
 city = city.toLowerCase().trim();
 
+debugger;
 function forcast() {
   if (weather.hasOwnProperty(city) === false) {
     alert(

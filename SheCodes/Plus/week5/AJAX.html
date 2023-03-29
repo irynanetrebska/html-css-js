@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>OpenWeather API</title>
+    <style>
+      body {
+        background: #f6f6f6;
+      }
+      h1 {
+        color: #6443ea;
+        font-family: "PT Mono";
+        text-align: center;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>🖲 AJAX</h1>
+    <img
+      src="https://paper-attachments.dropbox.com/s_A95344764D52AA21419095E524C2218D68BF719E44B29F7D8A2A3E2647B9B8AF_1560193261406_image.png"
+      alt="API"
+    />
+
+    <script>
+      function displayUsername(response) {
+        console.log(response.data.username);
+
+        let h1 = document.querySelector("h1");
+        h1.innerHTML = `Hey ${response.data.username}`;
+      }
+
+      /*
+      function displayUsername(response) {
+        let h1 = document.querySelector("h1");
+        response.data.forEach(user => {
+            console.log(user.username);
+        })
+      }
+      */
+
+      let apiUrl = "https://jsonplaceholder.typicode.com/users/1";
+
+      axios.get(apiUrl).then(displayUsername);
+    </script>
+  </body>
+</html>

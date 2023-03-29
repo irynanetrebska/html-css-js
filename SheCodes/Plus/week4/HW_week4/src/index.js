@@ -60,3 +60,5 @@ function switchTempBack(event) {
 
 let celciusTemp = document.querySelector("#celcius");
 celciusTemp.addEventListener("click", switchTempBack);
+
+//https://codesandbox.io/s/forms-forked-mo23uo?file=/src/index.js
